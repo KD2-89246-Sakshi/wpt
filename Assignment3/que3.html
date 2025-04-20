@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    .product-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 200px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .price {
+      color: orange;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .cart-button {
+      background-color: green;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cart-button:hover {
+      background-color: darkorange;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Our Products</h2>
+
+  <div class="product-container">
+    <div class="product-card">
+      <img src="./laptop.jpg" alt="Product 1">
+      <p class="product-name">Product 1</p>
+      <p>High-quality product that meets your needs.</p>
+      <p class="price">$805.08</p>
+      <button class="cart-button">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="./laptop bag.jpg" alt="Product 2">
+      <p class="product-name">Product 2</p>
+      <p>Excellent craftsmanship and durable design.</p>
+      <p class="price">$11.50</p>
+      <button class="cart-button">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="./kb.jpg" alt="Product 3">
+      <p class="product-name">Product 3</p>
+      <p>Reliable and affordable choice for everyone.</p>
+      <p class="price">$12.00</p>
+      <button class="cart-button">Add to Cart</button>
+    </div>
+  </div>
+
+</body>
+</html>
