@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date and Greeting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f8ff;
+    }
+    .date {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .greeting {
+      font-size: 28px;
+      color: #007acc;
+    }
+  </style>
+</head>
+<body>
+  <div class="date" id="dateDisplay"></div>
+  <div class="greeting" id="greetingDisplay"></div>
+
+  <script>
+    const dateDisplay = document.getElementById("dateDisplay");
+    const greetingDisplay = document.getElementById("greetingDisplay");
+
+    const now = new Date();
+
+    // Format date: Weekday, Month Day, Year
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateDisplay.textContent = now.toLocaleDateString('en-US', options);
+
+    // Determine greeting
+    const hours = now.getHours();
+    let greeting = "";
+
+    if (hours < 12) {
+      greeting = "Good Morning";
+    } else if (hours < 17) {
+      greeting = "Good Afternoon";
+    } else {
+      greeting = "Good Evening";
+    }
+
+    greetingDisplay.textContent = greeting;
+  </script>
+</body>
+</html>

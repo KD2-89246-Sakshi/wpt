@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Name Sorter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      margin: 10px 0;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Employee Names</h2>
+
+  <input type="text" id="nameInput" placeholder="Enter employee name" />
+  <br>
+  <button onclick="addName()">Add Name</button>
+  <button onclick="displaySortedNames()">Display Sorted Names</button>
+
+  <h3>Sorted Employee Names:</h3>
+  <ul id="nameList"></ul>
+
+  <script>
+    const names = [];
+
+    function addName() {
+      const input = document.getElementById('nameInput');
+      const name = input.value.trim();
+
+      if (name === '') {
+        alert('Please enter a name.');
+        return;
+      }
+
+      if (names.length >= 6) {
+        alert('You have already entered 6 names.');
+        input.value = '';
+        return;
+      }
+
+      names.push(name);
+      input.value = '';
+    }
+
+    function displaySortedNames() {
+      const sortedNames = [...names].sort();
+      const list = document.getElementById('nameList');
+      list.innerHTML = '';
+
+      sortedNames.forEach(name => {
+        const li = document.createElement('li');
+        li.textContent = name;
+        list.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>

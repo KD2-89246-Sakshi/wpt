@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic calci</title>
+    <style>
+        body {
+          background-color: #f0f0f0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          font-family: Arial, sans-serif;
+        }
+    
+        table {
+          background-color: #ffffff;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+    
+        td {
+          padding: 10px;
+        }
+    
+        label {
+          font-weight: bold;
+        }
+    
+        input[type="number"], input[readonly] {
+          padding: 8px;
+          width: 200px;
+          font-size: 16px;
+        }
+    
+        input[readonly] {
+          background-color: #e0e0e0;
+        }
+    
+        button {
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+    
+        button:hover {
+          background-color: #007acc;
+          color: white;
+          cursor: pointer;
+        }
+      </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2"><h2>Baisc calculator</h2>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="num1">Enter first number:</label></td>
+            <td><input type="number" id="num1"></td>
+        </tr>
+
+        <tr>
+            <td><label for="num2">Enter second  number:</label></td>
+            <td><input type="number" id="num2"></td>
+        </tr>
+
+        <tr>
+            <td><label for="result">Result:</label></td>
+            <td><input type="text" id="result" readonly></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <button onclick="calculate('+')">Add</button>
+                <button onclick="calculate('-')">Substract</button>
+                <button onclick="calculate('*')">Multiply</button>
+                <button onclick="calculate('/')">Divide</button>
+
+            </td>
+        </tr>
+    </table>
+    <script>
+        function calculate(operator) {
+          const num1 = parseFloat(document.getElementById("num1").value);
+          const num2 = parseFloat(document.getElementById("num2").value);
+          const resultField = document.getElementById("result");
+    
+          if (isNaN(num1) || isNaN(num2)) {
+            alert("Please enter valid numbers in both fields.");
+            return;
+          }
+          let result;
+
+      switch(operator) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          if (num2 === 0) {
+            alert("Cannot divide by zero.");
+            return;
+          }
+          result = num1 / num2;
+          break;
+      }
+
+      resultField.value = result;
+    }
+  </script>
+
+</body>
+</html>
